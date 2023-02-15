@@ -1,6 +1,9 @@
 {
   "dependencies": {
-    "box-node-sdk": "^2.8.1"
+    "@aws-sdk/client-ses": "^3.271.0",
+    "aws-sdk": "^2.1315.0",
+    "box-node-sdk": "^2.8.1",
+    "uuid": "^9.0.0"
   },
   "name": "uploadwebhookhandler",
   "version": "1.0.0",
