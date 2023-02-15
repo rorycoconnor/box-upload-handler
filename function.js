@@ -109,8 +109,7 @@ const sendEmail = async (user) => {
 };
 
 const renameFileForMoveToQuarantine = (source, user) => {
-    // const nameParts = source.name.split('.');
-    // const newFileName = nameParts[0] + ' - ' + user + ' - ' + uuid.v4() + nameParts[1];
+
     const newFileName = user + ' - ' + uuid.v4() + ' - ' + source.name;
     return newFileName;
 }
