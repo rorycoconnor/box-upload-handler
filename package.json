@@ -1,0 +1,15 @@
+{
+  "dependencies": {
+    "box-node-sdk": "^2.8.1"
+  },
+  "name": "uploadwebhookhandler",
+  "version": "1.0.0",
+  "main": "function.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
