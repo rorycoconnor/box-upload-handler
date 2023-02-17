@@ -73,6 +73,8 @@ It will follow this format: AutomationUser_########_jG383jd@boxdevedition.com
 * CLIENT_SECRET - Client Secret of the Box File Handler App
 * PINNACLE_ENTERPRISE_ID - Box Enterprise ID for the Pinnacle Box Instance
 * BOX_QUARANTINE_FOLDER_ID - The folder ID of the Quarantine Folder. 
+* AWS_REGION - The region Amazon SES (Simple Email Service) is configured in.
+* SENDER_EMAIL - The email from which notifications for failed uploads will be sent.
 
 Note: The current max file size in the script is 1MB for testing purposes. Replace that value with the commented value to increase that limit to 200MB.
 
@@ -86,10 +88,21 @@ Note: The current max file size in the script is 1MB for testing purposes. Repla
 * node_modules
 3. Compress all of these items into a .zip file.
 4. In the AWS Lambda Console, select "Upload From" in the Code tab, and select .zip file. 
-5. Upload the .zip file created in Step 3. 
-6. Your code will automatically deploy. 
+5. Upload the .zip file created in Step 3.
+6. Under "Runtime Settings", click Edit. 
+7. Change the Handler field to "function.handleUpload" and save the change.
+8. Your code will automatically deploy. 
 
+# Set up Amazon SES (Simple Email Service)
+This tool uses Amazon SES to send notifications to the uploading user that their upload failed because the file was too large. 
 
+1. In the AWS Console, navigate to the SES Console. 
+2. Click "Create Identity".
+3. Choose "Email Address" and enter the Email Address from which you would like to send the failed upload notifications. 
+4. Navigate to the email inbox for the address used in Step 3 to confirm the identity. 
+
+For testing purposes, both the sender and recipient email must be confirmed identities. Repeat the process above for any email address you would 
+like to use for testing. 
 
 
 
